@@ -1,0 +1,35 @@
+const int ledVermelho = 2;
+const int ledAmarelo = 3;
+const int ledVerde = 4;
+
+// Tempos em milissegundos
+const unsigned long tempoVermelho = 5000;  // 5 segundos
+const unsigned long tempoVerde = 5000;     // 5 segundos
+const unsigned long tempoAmarelo = 2000;   // 2 segundos
+
+void setup() {
+  // Configuração dos pinos como saída
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledAmarelo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+}
+
+void loop() {
+  // Acende o LED vermelho e apaga os outros
+  digitalWrite(ledVermelho, HIGH);
+  digitalWrite(ledAmarelo, LOW);
+  digitalWrite(ledVerde, LOW);
+  delay(tempoVermelho);
+
+  // Acende o LED verde e apaga os outros
+  digitalWrite(ledVermelho, LOW);
+  digitalWrite(ledAmarelo, LOW);
+  digitalWrite(ledVerde, HIGH);
+  delay(tempoVerde);
+
+  // Acende o LED amarelo e apaga os outros
+  digitalWrite(ledVermelho, LOW);
+  digitalWrite(ledAmarelo, HIGH);
+  digitalWrite(ledVerde, LOW);
+  delay(tempoAmarelo);
+}
